@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamitris</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dynamitris</h1>
+        </header>
+        
+        <main>
+            <div id="game-wrapper">
+                <div id="game-container">
+                    <canvas id="game-canvas"></canvas>
+                </div>
+                
+                <div id="game-ui">
+                    <div id="game-stats">
+                        <div class="stat">
+                            <span class="stat-label">Score:</span>
+                            <span id="score-display">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Level:</span>
+                            <span id="level-display">1</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Lines:</span>
+                            <span id="lines-display">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Explosions:</span>
+                            <span id="explosions-display">0</span>
+                        </div>
+                    </div>
+                    
+                    <div id="next-pieces">
+                        <div class="next-piece-container">
+                            <div class="stat-label">Next:</div>
+                            <canvas id="next-piece-canvas-1"></canvas>
+                        </div>
+                        <div class="next-piece-container">
+                            <div class="stat-label">After:</div>
+                            <canvas id="next-piece-canvas-2"></canvas>
+                        </div>
+                    </div>
+                    
+                    <button id="pause-button">Pause</button>
+                </div>
+            </div>
+            
+            <div id="ui-overlay">
+                <div id="game-start" class="game-screen">
+                    <h2>Welcome to Dynamitris</h2>
+                    <p>Classic Tetris with explosive dynamite blocks!</p>
+                    <button id="start-button">Start Game</button>
+                </div>
+                <div id="game-paused" class="game-screen hidden">
+                    <h2>Game Paused</h2>
+                    <button id="resume-button">Resume</button>
+                </div>
+                <div id="game-over" class="game-screen hidden">
+                    <h2>Game Over</h2>
+                    <div class="final-score">
+                        <span>Final Score:</span>
+                        <span id="final-score-display">0</span>
+                    </div>
+                    <div class="final-score">
+                        <span>Explosions:</span>
+                        <span id="final-explosions-display">0</span>
+                    </div>
+                    <button id="restart-button">Play Again</button>
+                </div>
+            </div>
+            
+            <div id="controls-info">
+                <h3>Controls:</h3>
+                <ul>
+                    <li>← → : Move left/right</li>
+                    <li>↓ : Soft drop</li>
+                    <li>Z : Rotate counter-clockwise</li>
+                    <li>X : Rotate clockwise</li>
+                    <li>P : Pause/Resume</li>
+                </ul>
+                <div class="info-box">
+                    <h4>Dynamite Blocks:</h4>
+                    <p>Watch for special dynamite blocks that explode when cleared, destroying all adjacent blocks!</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Dynamitris</p>
+        </footer>
+    </div>
+
+    <script src="js/webgl-utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html> 
